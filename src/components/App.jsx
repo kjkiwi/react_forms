@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function App() {
-  const [name, setName] = useState("You");
+  const [name, setName] = useState("stranger");
   const [click, setClick] = useState(false);
 
   const fullName = [];
@@ -10,9 +10,13 @@ function App() {
     fullName.push(event.target.value);
   }
 
-  function mouseEvent(event) {
+  function mouseEvent() {
     setClick(true);
     setName(fullName.pop());
+  }
+
+  function resetButton() {
+    setClick(false);
   }
 
   return (
@@ -22,6 +26,7 @@ function App() {
       <button
         style={{ backgroundColor: click ? "black" : "white" }}
         onClick={mouseEvent}
+        onMouseOut={resetButton}
       >
         Submit
       </button>
