@@ -6,11 +6,11 @@ function App() {
 
   function captureInput(event) {
     setName(event.target.value);
-    event.preventDefault();
   }
 
   function clickAction() {
     setHeadingText(name);
+    event.preventDefault();
   }
 
   return (
