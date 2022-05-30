@@ -6,7 +6,7 @@ function App() {
 
   function captureInput(event) {
     setName(event.target.value);
-    console.log(name);
+    event.preventDefault();
   }
 
   function clickAction() {
