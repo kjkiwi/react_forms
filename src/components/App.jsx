@@ -4,11 +4,25 @@ function App() {
   const [name, setName] = useState("");
   const [headingText, setHeadingText] = useState("");
 
+  function captureInput(event) {
+    setName(event.target.value);
+    console.log(name);
+  }
+
+  function clickAction() {
+    setHeadingText(name);
+  }
+
   return (
     <div className="container">
       <h1>Hello {headingText} </h1>
-      <input type="text" placeholder="What's your name?" value={name} />
-      <button>Submit</button>
+      <input
+        onChange={captureInput}
+        type="text"
+        placeholder="What's your name?"
+        value={name}
+      />
+      <button onClick={clickAction}>Submit</button>
     </div>
   );
 }
