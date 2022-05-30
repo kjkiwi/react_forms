@@ -16,13 +16,15 @@ function App() {
   return (
     <div className="container">
       <h1>Hello {headingText} </h1>
-      <input
-        onChange={captureInput}
-        type="text"
-        placeholder="What's your name?"
-        value={name}
-      />
-      <button onClick={clickAction}>Submit</button>
+      <form onSubmit={clickAction}>
+        <input
+          onChange={captureInput}
+          type="text"
+          placeholder="What's your name?"
+          value={name}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
